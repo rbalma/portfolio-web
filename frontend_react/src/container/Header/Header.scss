@@ -1,0 +1,124 @@
+
+#home{
+  position: relative;
+  background: url("../../assets/circle.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+}
+
+.header-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8%;
+  width: 90%;
+}
+
+.home-user_info {
+
+  span {
+    font-size: 1.3rem;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  p {
+    position: relative;
+    padding-left: 4rem;
+    font-size: 1.8rem;
+    margin-bottom: 50px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 1px;
+      background-color: #000;
+      left: 0;
+      top: 1rem;
+    }
+  }
+
+  a {
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+  }
+}
+
+.container-image {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 400px;
+  width: 400px;
+  border-radius: 50%;
+  position: relative;
+  background: rgba(167, 163, 166, 1.0);
+  background: -webkit-radial-gradient(bottom right, rgba(167, 163, 166, 1.0), rgba(237, 249, 243, 1.0));
+  background: -moz-radial-gradient(bottom right, rgba(167, 163, 166, 1.0), rgba(237, 249, 243, 1.0));
+  background: radial-gradient(to top left, rgba(167, 163, 166, 1.0), rgba(237, 249, 243, 1.0));
+
+  img:nth-child(1) {
+    border-radius: 45%;
+  }
+
+  img:nth-child(2) {
+    position: absolute;
+    width: 80px;
+    top: 0;
+    right: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 10px;
+    transform: translatey(0px);
+	  animation: float 6s ease-in-out infinite;
+
+  }
+  img:nth-child(3) {
+    position: absolute;
+    width: 120px;
+    bottom: 0;
+    right: 0;
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 10px;
+    transform: translatey(0px);
+	  animation: float 6s ease-in-out infinite;
+  }
+  img:nth-child(4) {
+    position: absolute;
+    width: 70px;
+    left: -20px;
+    top: 50%;
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 10px;
+    transform: translatey(0px);
+	  animation: float 6s ease-in-out infinite;
+  }
+
+}
+
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-20px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+}
