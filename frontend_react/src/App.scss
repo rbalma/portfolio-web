@@ -99,37 +99,36 @@
 
 .app__social {
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  flex-direction: column;
-
-  padding: 1rem;
-
-  div {
-    width: 40px;
-    height: 40px;
+  justify-content: flex-start;
+  gap: 25px;
+  margin: 8px 0px 30px;
+/* 
+https://github.com/juliocodes-sm/Reels/blob/main/Icons/02/styles.css
+*/
+  a {
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     background-color: var(--white-color);
     margin: 0.25rem 0;
-    border: 1px solid var(--lightGray-color);
+    border: 2px solid var(--lightGray-color);
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    transition: all 0.3s ease-in-out;
+    transition-property: background-color;
+    transition-duration: 0.25s;
 
     svg {
-      width: 15px;
-      height: 15px;
+      width: 20px;
+      height: 20px;
       color: var(--gray-color);
     }
 
     &:hover {
-      background-color: var(--secondary-color);
-      border-color: var(--secondary-color);
-
       svg {
+        animation: shake 0.25s;
         color: var(--white-color);
       }
     }
@@ -146,6 +145,40 @@
       }
     }
   }
+}
+
+.icon-instagram:hover {
+	background-image: radial-gradient(
+		circle at 30% 107%,
+		#fdf497 0%,
+		#fdf497 5%,
+		#fd5949 45%,
+		#d6249f 60%,
+		#285aeb 90%
+	);
+}
+
+.icon-linkedin:hover {
+	background-color: #0077b5;
+}
+
+.icon-github:hover {
+	background-color: #0D1116;
+}
+
+@keyframes shake {
+	10% {
+		transform: rotate(15deg);
+	}
+	20% {
+		transform: rotate(-15deg);
+	}
+	30% {
+		transform: rotate(15deg);
+	}
+	40% {
+		transform: rotate(-15deg);
+	}
 }
 
 .app__navigation {

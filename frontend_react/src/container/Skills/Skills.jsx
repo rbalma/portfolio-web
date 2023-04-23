@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { FaCode } from "react-icons/fa";
+import { BiCodeCurly } from "react-icons/bi";
 import { Tooltip as ReactTooltip } from "react-tooltip";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
 
 import "./Skills.scss";
+import { Qualification } from "./Qualification";
 
 const Skills = () => {
   const [experiences, setExperiences] = useState([]);
@@ -28,6 +31,9 @@ const Skills = () => {
       <h2 className="head-text">Skills & Experience</h2>
 
       <div className="app__skills-container">
+        <section>
+        <h3> <FaCode /> Frontend Developer</h3>
+        <h3> <BiCodeCurly /> Backend Developer</h3>
         <motion.div className="app__skills-list">
           {skills.map((skill) => (
             <motion.div
@@ -47,9 +53,10 @@ const Skills = () => {
             </motion.div>
           ))}
         </motion.div>
+        </section>
 
         <div className="app__skills-exp">
-          {experiences.map((experience) => (
+          {/* {experiences.map((experience) => (
             <motion.div className="app__skills-exp-item" key={experience.year}>
               <div className="app__skills-exp-year">
                 <p className="bold-text">{experience.year}</p>
@@ -79,7 +86,9 @@ const Skills = () => {
                 ))}
               </motion.div>
             </motion.div>
-          ))}
+          ))} */}
+
+          <Qualification />
         </div>
       </div>
     </>

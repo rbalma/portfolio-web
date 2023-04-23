@@ -5,6 +5,7 @@ import { AppWrap, MotionWrap } from "../../wrapper";
 import "./About.scss";
 import { urlFor, client } from "../../client";
 import { Card } from "./Card";
+import { Loader } from "../../components/Loader/Loader";
 
 const About = () => {
   const [abouts, setAbouts] = useState([]);
@@ -25,6 +26,7 @@ const About = () => {
       </h2>
 
       <div className="app__profiles">
+        <Loader />
         {/* {abouts.map((about, index) => (
           <motion.div
             whileInView={{ opacity: 1 }}
@@ -43,7 +45,7 @@ const About = () => {
           </motion.div>
         ))} */}
 
-        <Card />
+        {/* <Card /> */}
       </div>
     </>
   );

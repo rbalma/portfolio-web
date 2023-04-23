@@ -1,6 +1,7 @@
 import { FaRegFileAlt } from "react-icons/fa";
 import { AppWrap } from '../../wrapper';
 import { images } from '../../constants';
+import { SocialMedia } from "../../components";
 import CV from '../../assets/Rodrigo Balmaceda - CV.pdf';
 
 import './Header.scss';
@@ -11,8 +12,9 @@ const Header = () => {
       <div className='home-user_info'>
         <span>Hola, soy</span>
         <h1>Rodrigo Balmaceda</h1>
-        <p>Desarrollador Web</p>
-        <a download="" href={CV}>Descargar CV <FaRegFileAlt /></a>
+        <div className="home-user_subtitle"><span>Desarrollador Web</span></div>
+        <SocialMedia />
+        <a className="home-cv_link" download="" href={CV}>Descargar CV</a>
       </div>
 
       <div className="container-image">

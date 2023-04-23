@@ -23,14 +23,33 @@
   }
 
   h1 {
-    font-size: 3.5rem;
+    font-size: 3.7rem;
+    color: #121212;
+    text-shadow: #cccccc 0.1ch 0.1ch;            
   }
 
-  p {
-    position: relative;
+  .home-cv_link {
+    background-color: var(--secondary-color);
+    color: #fff;
+    font-weight: 500;
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    outline: 2px solid var(--secondary-color);
+    transition: outline-offset .10s;
+
+    &:hover, &:focus{
+      outline-offset: 3px;
+    }
+  }
+}
+
+.home-user_subtitle {
+  position: relative;
     padding-left: 4rem;
     font-size: 1.8rem;
-    margin-bottom: 50px;
 
     &::before {
       content: '';
@@ -41,17 +60,21 @@
       left: 0;
       top: 1rem;
     }
-  }
 
-  a {
-    background-color: var(--secondary-color);
-    color: #fff;
-    padding: 15px 20px;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-  }
+    span {
+      font-size: 1.7rem;
+      background-image: linear-gradient(#E9F1F6, #ddd);
+      background-repeat: no-repeat;
+      background-size: 0% 100%;
+      background-position-x: right;
+
+      transition: background-size 500ms;
+  
+      &:hover {
+        background-size: 100% 100%;
+        background-position-x: left;
+      }
+    }    
 }
 
 .container-image {

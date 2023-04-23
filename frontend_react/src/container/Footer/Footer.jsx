@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { images } from '../../constants';
+import { FaArrowRight, FaWhatsapp } from "react-icons/fa";
+import { RiMailSendLine } from "react-icons/ri";
 import { AppWrap, MotionWrap } from '../../wrapper';
 import { client } from '../../client';
 
@@ -39,34 +40,40 @@ const Footer = () => {
     <>
       <h2 className="head-text">Take a coffee & chat with me</h2>
 
+      <div className='app__footer-container'>
+
       <div className="app__footer-cards">
         <div className="app__footer-card ">
-          <img src={images.email} alt="email" />
-          <a href="mailto:hello@micael.com" className="p-text">hello@micael.com</a>
+          <RiMailSendLine />
+          <span>Correo</span>
+          <a href="mailto:balmarodrigo@hotmail.com" className="p-text">balmarodrigo@hotmail.com</a>
         </div>
         <div className="app__footer-card">
-          <img src={images.mobile} alt="mobile" />
-          <a href="tel:+1 (123) 456-7890" className="p-text">+1 (123) 456-7890</a>
+          <FaWhatsapp />
+          <span>Whatsapp</span>
+          <a href="https://api.whatsapp.com/send?phone=3517179968&text=Hola, me gustaría contactarme con vos." className="p-text">(351) 717-9968</a>
         </div>
       </div>
+
+
       {!isFormSubmitted ? (
         <div className="app__footer-form app__flex">
           <div className="app__flex">
-            <input className="p-text" type="text" placeholder="Your Name" name="name" value={name} onChange={handleChangeInput} />
+            <input required type="text" placeholder="Ingresa tu nombre" name="name" value={name} onChange={handleChangeInput} />
           </div>
           <div className="app__flex">
-            <input className="p-text" type="email" placeholder="Your Email" name="email" value={email} onChange={handleChangeInput} />
+            <input required type="email" placeholder="Ingresa tu correo" name="email" value={email} onChange={handleChangeInput} />
           </div>
           <div>
             <textarea
-              className="p-text"
-              placeholder="Your Message"
+              required
+              placeholder="Escribe un mensaje"
               value={message}
               name="message"
               onChange={handleChangeInput}
             />
           </div>
-          <button type="button" className="p-text" onClick={handleSubmit}>{!loading ? 'Send Message' : 'Sending...'}</button>
+          <button type="button" onClick={handleSubmit}>{!loading ? 'Send Message' : 'Sending...'} <FaArrowRight /></button>
         </div>
       ) : (
         <div>
@@ -75,6 +82,7 @@ const Footer = () => {
           </h3>
         </div>
       )}
+      </div>
     </>
   );
 };
@@ -82,5 +90,5 @@ const Footer = () => {
 export default AppWrap(
   MotionWrap(Footer, 'app__footer'),
   'contact',
-  'app__whitebg',
+  'app__primarybg',
 );
